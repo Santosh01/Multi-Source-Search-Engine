@@ -12,7 +12,7 @@ public class IndexSolr {
 	public static void main(String[] args) {
 		
 		/*bingRunner.starter();
-		System.out.println("Bing Indexed.\n");
+		System.out.pri sntln("Bing Indexed.\n");
 		*/
 
 		WikiNewsRunner.starter();
