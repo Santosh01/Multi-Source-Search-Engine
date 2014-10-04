@@ -1,0 +1,76 @@
+East Pakistan,East Bengal,Bangladesh
+Byelorussia,White Russia,Belarus
+British Honduras,Belize
+Dahomey,Benin
+Upper Peru,Bolivia
+Bechuanaland,Botswana
+Khmer Republic,Kampuchea,Cambodia
+New Granada,Colombia
+Democratic Republic of the Congo,Zaire,Democratic Republic of the Congo
+Bohemia,Czechoslovakia,Czech Republic
+Abyssinia,Ethiopia
+Gold Coast,Ghana
+Dutch East Indies,Indonesia
+British Mandate of Mesopotamia,Iraq
+British Mandate of Palestine,Israel
+Transjordan,Jordan
+Gilbert Islands,Kiribati
+Basutoland,Lesotho
+Nyasaland,Malawi
+French Sudan,Mali
+New Spain,Mexico
+Bessarabia,Moldova
+Southwest Africa,Namibia
+County of Holland,Dutch Republic,Batavian Republic,Netherlands
+Spanish East Indies,Philippines
+Temasik,Singapore
+Ceylon,Sri Lanka
+Siam,Thailand
+French Togoland,Togo
+Ellice Islands,Tuvalu
+Northern Rhodesia,Zambia
+Southern Rhodesia,Rhodesia,Zimbabwe
+ind,india
+pak,pakistan
+mumbai,bombay
+which,wich => which
+until,untill => until
+true,truely,truly => truly
+tommorow, tommorrow => tomorrow
+seperate => separate
+teh,the => the
+thsi,this => this
+suprise => surprise
+resistence => resistance
+rember,remeber => remember
+refered,refering = refer
+recieve => receive
+realy => really
+prefered,prefering => prefer
+posession => possession
+peice => piece
+persistant => persistent
+occurance,occurence => occurrence
+occured,occuring => occur
+ocassion,occassion => occasion
+noticable => noticeable
+neccessary,nessacery,nesasery => necessary
+liase,liason => liaise
+knowlege => knowlegde
+interupt => interrupt
+independant => independent
+us,usa => united states
+ind => india
+pak => pakistan
+United States,U.S.A,U.S,U.S.
+Britain,Great Britain,England,United Kingdom
+Republic of Korea,South Korea
+Holland,Netherlands,Netherland
+Denmark,Greenland
+Mumbai,Bombay
+Delhi,New Delhi
+Chennai,Madras
+Bangalore,Bengaluru
+Calcutta,Kolkata
+Myanmar,Burma
+United Arab Emirates,UAE

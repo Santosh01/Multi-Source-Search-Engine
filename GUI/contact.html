@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Contact US</title>
+<link href="images/icon.ico" rel="shortcut icon">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/myscripts.js"></script>
+<script type="text/javascript" src="js/date_time.js"></script>
+<!--<script type="text/javascript" src="js/jscript.js"></script>-->
+
+<script>
+function myFunction(x)
+{
+		x.style.background="#9ED3FE";
+		
+		if(x.value == 'Enter your name') 
+		{
+			x.value = '';
+			x.style.color='black';
+			
+			
+		}
+		
+		if(x.value=='Enter your address')
+		{
+			x.value = '';
+			x.style.color='black';
+			
+		}
+		if(x.value=='Enter your phone no')
+		{
+			x.value = '';
+			x.style.color='black';
+			
+		}
+		if(x.value=='Enter your e-mail')
+		{
+			x.value = '';
+			x.style.color='black';
+			
+		}
+		
+}
+
+function myFunction1(x)
+{
+	
+	x.style.backgroundColor =""; 
+	
+	x.style.color='black';
+	
+	
+}
+function myFunction2(x)
+{
+	
+	x.style.backgroundColor =""; 
+	
+	x.style.color='black';
+	
+}
+function myFunction3(x)
+{
+	
+	x.style.backgroundColor =""; 
+	x.style.color='black';
+	
+}
+function myFunction4(x)
+{
+	
+	x.style.backgroundColor =""; 
+	//x.value='Enter your e-mail';
+	x.style.color='black';
+	
+}
+function myFunction5(x)
+{
+x.style.backgroundColor =""; 
+x.style.color='black';
+}
+
+
+</script>
+
+<script>
+$(document).ready(function(){
+	
+	$("#enquiry").click(function(){
+		$(".contact").hide();
+	 });
+});
+
+</script>
+
+</head>
+<body>
+<div align="center">
+
+	<div id="header">
+    	<div class="container">
+           <a target="_blank" href="http://www.buffalo.edu"><div class="logo"></div></a>
+            <div class="dt">
+                <span id="date_time"></span>
+                <script type="text/javascript">window.onload = date_time('date_time');</script>
+            </div>
+    	</div><!-- end of container -->
+    </div><!-- end of header -->
+
+    <div id='cssmenu'>
+    <div class="container">
+        <ul>
+           <li ><a href='index.html'><span>Home</span></a></li>
+		<li class='last'><a href='http://localhost/phpsqlajax_map_v3.html'><span>Map</span></a></li>
+          <li><a href='about1.html'><span>About Project</span></a></li>
+           <li class='active'><a href='contact.html'><span>Contact Us</span></a></li>
+           <li class='last'><a href='faq.html'><span>FAQ</span></a></li>
+        </ul>
+	</div>
+    </div>
+    
+    <!-- Content -->
+    <div class="container">
+        <div class="content">
+           	<div>&nbsp;</div>
+        	<div class="left">
+            	<div id="map">
+                	<iframe width="480" height="320" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.co.in/maps?t=m&amp;q=University+at+Buffalo,+3435+Main+St,+Buffalo,+Erie,+New+York+14214,+United+States&amp;ie=UTF8&amp;hl=en&amp;geocode=FchrjwId_VhN-w&amp;split=0&amp;hq=&amp;hnear=University+at+Buffalo,+3435+Main+St,+Buffalo,+Erie,+New+York+14214,+United+States&amp;ll=42.961825,-78.81506&amp;spn=0.0201,0.041113&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+                </div>
+                <h2>Contact US:</h2>
+                
+			<table width="600px" height="100px;">
+			<tr>
+			<td><p><b>Santosh Kumar Dubey</b><br><b>Email: <br><a href="mailto: sdubey2@buffalo.edu"> sdubey2@buffalo.edu </a> </b> <br></td>	</tr>
+			</table>	
+			</div>
+            <div>&nbsp;</div>
+            <div class="right">
+            	<div class="form">
+                    <form action="" name="enquiry" method="post" enctype="multipart/form-data" onSubmit="return validate1()">
+					
+                    <h2>Send your Queries</h2>
+                    <table width="545px" height="300px;">
+                        <tr>
+                       
+                            <td>Name</td><td>:</td><td><input type="text" name="name" id="name" class="box" value="Enter your name" onfocus="myFunction(this)" onBlur="myFunction1(this)"></td>
+                            <td><div id="nm" class="contact">Must be 5 letter</div><div id="nmerror" class="cerror"></div></td>
+                        </tr>
+                        <tr>
+                            <td>Address</td><td>:</td><td><input type="text" name="address" id="address" class="box" value="Enter your address" onFocus="myFunction(this)"  onBlur="myFunction2(this)"></td>
+                            <td><div id="adds" class="contact">Must be 10 letter</div><div id="adderror" class="cerror"></div></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Phone No</td><td>:</td><td><input type="text" name="phoneno" id="phoneno" class="box" value="Enter your phone no" onFocus="myFunction(this)"  onBlur="myFunction3(this)"></td>
+                            <td><div id="ph" class="contact">Must be 10 letter</div><div id="pherror" class="cerror"></div></td>
+                        </tr>
+                        <tr>
+                            <td>E-mail</td><td>:</td><td><input type="text" name="email" id="email" class="box" value="Enter your e-mail" onFocus="myFunction(this)"  onBlur="myFunction4(this)"></td>
+                            <td><div id="em" class="contact">Should be valid email-id</div><div id="nmerror" class="cerror"></div></td>
+                        </tr>
+                        <tr>
+                            <td>Queries</td><td>:</td><td><textarea name="details" id="details" class="box1" onFocus="myFunction(this)" onBlur="myFunction5(this)"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td>
+							<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="enquiry" id="enquiry" value="Submit" class="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="reset" name="reset" value="Refresh" class="button">
+                            </td>
+                        </tr>
+                    </table>
+                    </form>
+                </div>
+				
+            </div>
+        </div><!-- end of contents -->
+	</div><!-- end of container -->
+  <!-- Footer -->
+    <div id="footer">
+    <div class="container">
+        <div class="footer_nav">
+              <span>Copyright &copy; 2014, <a href="http://www.buffalo.edu"> University at Buffalo </a> All rights reserved | <a href="privacy.html"> Privacy & Accessibility </a></span>
+        </div>
+        <div class="footer_nav _center">
+            <a target="_blank" href="https://www.facebook.com/universityatbuffalo"><img src="images/s1.png"></a>
+            <a target="_blank" href="https://twitter.com/UBCommunity"><img src="images/s2.png"></a>
+        </div>
+        <div class="footer_nav _right">
+        	<a href="faq.html">FAQ</a>
+        </div>
+    </div>
+	</div> <!-- end of Footer -->
+
+</div>
+</div>
+</body>
+</html>

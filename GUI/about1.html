@@ -1,0 +1,427 @@
+/<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>About Project</title>
+<link href="images/icon.ico" rel="shortcut icon">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="content/styles.css" rel="stylesheet" />
+<link href="css/ui-lightness/jquery-ui-1.8.23.custom.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/myscripts.js"></script>
+<script type="text/javascript" src="js/date_time.js"></script>
+<link href="content/styles.css" rel="stylesheet" />
+<!--<script type="text/javascript" src="js/jquery-1.9.1.js"></script>-->
+<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript" src="js/js-image-slider.js"></script>
+<script type="text/javascript" src="js/myscripts1.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="scripts/jquery.autocomplete.js"></script>
+
+<script>
+//==========================================Auto-Suggestion for Wikipedia=========================================//
+
+	$(function () {
+		    $.ajax({
+			url: 'http://localhost:8080/solr/Wikipedia/select?q=*&fl=title&wt=json&indent=true',
+			dataType: 'json'
+		    }).done(function (source) {
+
+				var arr = [];
+
+			    if(source.response.docs != "") {
+					$.each(source.response.docs, function(key, val) {
+						$.map(source.response.docs[key], function (value, k) {
+							if($.inArray(value.toString(), arr) < 0) {
+								arr.push(value.toString());
+							}
+						});
+
+					});
+				}
+
+//==========================================Auto-Suggestion for Wikivoyage=========================================//
+				 $.ajax({
+					url: 'http://localhost:8080/solr/Wikivoyage/select?q=*&fl=title&wt=json&indent=true',
+					dataType: 'json'
+					}).done(function (source1) {
+						if(source1.response.docs != "") {
+							$.each(source1.response.docs, function(key, val) {
+								$.map(source1.response.docs[key], function (value, k) {
+									if($.inArray(value.toString(), arr) < 0) {
+										arr.push(value.toString());
+									}
+								});
+
+							});
+					}
+
+//==========================================Auto-Suggestion for Wikinews=========================================//
+				 $.ajax({
+					url: 'http://localhost:8080/solr/Wikinews/select?q=*&fl=title&wt=json&indent=true',
+					dataType: 'json'
+					}).done(function (source2) {
+						if(source2.response.docs != "") {
+							$.each(source2.response.docs, function(key, val) {
+								$.map(source2.response.docs[key], function (value, k) {
+									if($.inArray(value.toString(), arr) < 0) {
+										arr.push(value.toString());
+									}
+								});
+
+							});
+					}
+
+			$('#querys').autocomplete({
+			    lookup: arr,
+				onSelect: function (suggestion) {
+				}
+			});
+
+		    });
+
+		});
+		});
+		});
+		$("#querys").keypress(function(e){
+			if(e.keyCode == 13) {
+				success_fn();
+				return false;
+			}
+		});
+</script>
+<!==========================================HTML Start=======================================================>
+</head>
+<body>
+<div align="center">
+
+	<div id="header">
+    	<div class="container">
+            <a href="http://www.buffalo.edu"><div class="logo"></div></a>
+            <div class="dt">
+                <span id="date_time"></span>
+                <script type="text/javascript">window.onload = date_time('date_time');</script>
+            </div>
+    	</div><!-- end of container -->
+    </div><!-- end of header -->
+
+    <div id='cssmenu'>
+    <div class="container">
+        <ul>
+           <li><a href='index.html'><span>Home</span></a></li>
+           <li class='last'><a href='http://localhost/phpsqlajax_map_v3.html'><span>Map</span></a></li>
+           <li class='active'><a href='about1.html'><span>About Project</span></a></li>
+           <li class='last'><a href='contact.html'><span>Contact Us</span></a></li>
+           <li class='last'><a href='faq.html'><span>FAQ</span></a></li>
+        </ul>
+
+	<div class="search1">
+    	<div class="container">
+        	<div id="search-bar">
+
+            <form method="get" action="result.jsp" id="form1">
+           <input type="text" name="search" class="search" id="querys" value="Search here" onFocus="if(this.value == 'Search here') {this.value = '';this.style.color='black';}" >
+            <input type="submit" class="button" value="Search" name="submit_btn" id="submit_btn">
+            </form>
+            </div><!--end of search bar-->
+            <div id="space"></div>
+        </div><!--end of container-->
+    </div><!--search1-->
+    </div><!--end of container-->
+    </div><!--end of cssmenu-->
+
+
+    <!-- Content -->
+    <div class="container">
+    <div class="content">
+    <div id="options">
+
+	<a href="javascript:parentAccordion.pr
+
+(1)">Expand All</a> | <a
+
+href="javascript:parentAccordion.pr(-1)">Collapse
+
+All</a>
+
+</div><!--end of options-->
+
+    <ul class="acc" id="acc">
+    <li>
+		<h3>Multi Source search</h3>
+		<div class="acc-section">
+			<div class="acc-content">
+            <b> Abstract : </b> <br>
+				Our information
+
+retrieval project will be multi-source search engine.
+
+We will index three XML dumps from Wikipedia website
+
+and return search results for free text queries. We
+
+will use Apache Solr to create our search engine. The
+
+aim of the project is to provide user a complete
+
+Wikipedia search experience. Results from all three
+
+dumps will be related to each other and will be shown
+
+to the user on a single interface.
+			</div>
+		</div><!--end of Multi Source
+
+search-->
+	</li>
+
+	 <li>
+		<h3>Implementation</h3>
+		<div class="acc-section">
+			<div class="acc-content">
+            <b> We will be implementing our system in the following Modules : </b> <br>
+				<ul class="acc"
+
+id="nested">
+					<li>
+
+
+<h3>Parsing</h3>
+						<div
+
+class="acc-section">
+
+
+<div class="acc-content">
+
+	Using standard Analyzers provided by Solr to
+
+parse our data. We will also write our own analyzers
+
+to normalize the text which will be created. Most of
+
+our code will be from project one where we have built
+
+Wikiparsers and XML parsers to extract text from the
+
+XML dumps. We will define our index fields and apply
+
+the analyzers accordingly. This will create a
+
+TokenStream.
+
+
+</div>
+
+
+</div><!--end of parsing-->
+					</li>
+					<li>
+
+
+<h3>Tokenizing</h3>
+						<div
+
+class="acc-section">
+
+
+<div class="acc-content">
+
+
+	We will use Standard Tokenizer factory and
+
+filters like Whitespace and Lowercase filters to
+
+break the TokenStream into tokens. They will work to
+
+strip the extraneous characters and sets token types
+
+to meaningful values. We will use the Standard
+
+Tokenizer Factory, Letter Tokenizer Factory,
+
+Whitespace Tokenizer Factory, NGram Tokenizer Factory
+
+and Pattern Tokenizer Factory. By the end of
+
+Tokenizing will have a Solr-Input-Document which we
+
+will be able index in Solr..
+
+
+</div>
+
+
+</div><!--end of Tokenizing-->
+					</li>
+					<li>
+
+
+<h3>Indexing</h3>
+						<div
+
+class="acc-section">
+
+
+<div class="acc-content">
+
+	<table>
+	<tr> <td>
+
+		Using SolrJ will be able add a collection of
+
+	Solr-Input-Documents to the solr index. By calling
+
+	the SolrJ API we can write code to index large number of Solr-Input-Documents.
+	</tr> </td>
+
+
+	<tr><td>
+	Three separate indexes will be created to each of the Wikipedia dumps:
+	</tr></td>
+	<tr> <td>
+	i) Wikipedia
+
+	</tr></td>
+
+	<tr> <td>
+	ii) Wikinews
+	</tr></td>
+	<tr> <td>
+	iii) Wikivoyage
+	</tr></td>
+
+	</table>
+</div>
+
+
+</div><!--end of indexing-->
+					</li>
+
+                <li>
+		<h3>Query Processing</h3>
+		<div class="acc-section">
+			<div class="acc-content">
+				We will use different
+
+analyzers to parse the input query. The standard
+
+tokenizer factory and lower case filter factory to
+
+normalize the incoming query. And run the query on
+
+the three cores. We will then return the results in
+
+JSON format for our client side Javascript to handle
+
+and render the HTML page.	</div>
+		</div><!--end of Query Processing-->
+	</li>
+
+
+               <li>
+		<h3>Design</h3>
+		<div class="acc-section">
+			<div class="acc-content">
+<table>
+					<tr> <td>
+
+	i) Solr will be deployed in a Tomcat server. <br>
+
+
+					</td></tr>
+					<tr> <td>
+
+	ii) It will have three cores holding separate indexes from Wikipedia, Wikinews and Wikivoyage.
+
+					</td></tr>
+
+					<tr> <td>
+
+
+	iii) User will be presented with a web based interface.
+
+					</td></tr>
+
+	<tr> <td>
+
+	iv) UI will be hosted by Tomcat as well.
+
+	</tr></td>
+	<tr> <td>
+	v) User will type a free text query and submit the form.
+
+	</tr></td>
+
+	<tr> <td>
+	vi) JQuery will convert the query to Solr query syntax and wait for and HTTP response.
+
+	</tr></td>
+
+	<tr> <td>
+	vii) Solr will reply in JSON format.
+
+	</tr></td>
+
+	<tr> <td>
+	viii) JQuery script will parse the JSON and make object from the result response.
+
+	</tr></td>
+
+	<tr> <td>
+	ix) New HTML page will be rendered to display the results in HTML format.
+
+	</tr></td>
+	</table>
+            </div>
+		</div><!--end of Design-->
+	</li>
+
+
+
+</ul>
+
+<script type="text/javascript" src="script.js"></script>
+
+<script type="text/javascript">
+
+var parentAccordion=new TINY.accordion.slider("parentAccordion");
+parentAccordion.init("acc","h3",0,0);
+
+var nestedAccordion=new TINY.accordion.slider("nestedAccordion");
+nestedAccordion.init("nested","h3",1,-1,"acc-selected");
+
+</script>
+
+</div>
+    </div><!--end of Implementation-->
+
+</li>
+</ul>
+</div><!--end of content-->
+
+</div><!--end of container-->
+
+    <!-- Footer -->
+    <div id="footer">
+    <div class="container">
+        <div class="footer_nav">
+              <span>Copyright &copy; 2014, <a href="http://www.buffalo.edu"> University at Buffalo </a> All rights reserved | <a href="privacy.html"> Privacy & Accessibility </a></span>
+        </div>
+        <div class="footer_nav _center">
+            <a target="_blank" href="https://www.facebook.com/universityatbuffalo"><img src="images/s1.png"></a>
+            <a target="_blank" href="https://twitter.com/UBCommunity"><img src="images/s2.png"></a>
+        </div>
+        <div class="footer_nav _right">
+        	<a href="faq.html">FAQ</a>
+        </div>
+    </div>
+	</div> <!-- end of Footer -->
+
+</div><!--end of center-->
+
+
+
+</body>
+</html>
